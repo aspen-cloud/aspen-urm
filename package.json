@@ -9,17 +9,21 @@
   "scripts": {
     "test": "npm run build:ts && tsc -p test/tsconfig.test.json && tap test/**/*.test.ts",
     "start": "npm run build:ts && fastify start -l info dist/app.js",
-    "build:ts": "tsc",
-    "dev": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\"  \"tsc -w\" \"fastify start -w -l info -P dist/app.js\""
+    "build:ts": "tsc && next build",
+    "dev": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\"  \"tsc -w\" \"fastify start -w --ignore-watch='node_modules next src/pages' -l info -P dist/app.js\""
   },
   "keywords": [],
-  "author": "Matthew Linkous <matthew.linkous@gmail.com>",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "fastify": "^3.0.0",
-    "fastify-plugin": "^3.0.0",
     "fastify-autoload": "^3.3.1",
-    "fastify-cli": "^2.7.0"
+    "fastify-cli": "^2.7.0",
+    "fastify-nextjs": "^5.1.0",
+    "fastify-plugin": "^3.0.0",
+    "next": "^10.0.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.14",
