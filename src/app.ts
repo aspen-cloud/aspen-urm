@@ -2,6 +2,7 @@ import { join } from "path";
 import AutoLoad, { AutoloadPluginOptions } from "fastify-autoload";
 import { FastifyPluginAsync } from "fastify";
 import fastifyNextjs from "fastify-nextjs";
+import fastifyPostgres from "fastify-postgres";
 
 export type AppOptions = {
   // Place your custom options for app below here.
@@ -16,6 +17,10 @@ const app: FastifyPluginAsync<AppOptions> = async (
   void fastify.register(fastifyNextjs).after(() => {
     console.log("Loaded fastify nextjs");
     fastify.next("/*");
+  });
+
+  void fastify.register(fastifyPostgres, {
+    connectionString: process.env.PG_URL,
   });
 
   // Do not touch the following lines

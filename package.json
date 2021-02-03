@@ -21,12 +21,15 @@
     "fastify-cli": "^2.7.0",
     "fastify-nextjs": "^5.1.0",
     "fastify-plugin": "^3.0.0",
+    "fastify-postgres": "^3.4.0",
     "next": "^10.0.6",
+    "pg": "^8.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.14",
+    "@types/pg": "^7.14.9",
     "@types/tap": "^14.10.1",
     "concurrently": "^5.1.0",
     "fastify-tsconfig": "^1.0.1",
